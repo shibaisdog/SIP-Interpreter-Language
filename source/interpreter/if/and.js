@@ -1,3 +1,3 @@
 module.exports = (line) => {
-    return line.replaceAll(" and"," &&")
+    return line.replaceAll(" and "," && ")
 }

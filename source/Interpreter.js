@@ -34,6 +34,7 @@ module.exports = (line) => {
     for (let i in after_replace) {out = out.replaceAll(after_replace[i].b,after_replace[i].a)}
     out = require('./interpreter/function/print.js')(out) // PRINT ~1
     out = require('./interpreter/type/read.js')(out) // TYPE? ~1
+    out = require('./interpreter/if/not.js')(out) // NOT ~1
     out = require('./interpreter/if/and.js')(out) // AND ~1
     out = require('./interpreter/if/or.js')(out) // OR ~1
     return out

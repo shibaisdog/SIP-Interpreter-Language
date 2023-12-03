@@ -1,3 +1,3 @@
 module.exports = (line) => {
-    return line.replaceAll(" or"," ||")
+    return line.replaceAll(" or "," || ")
 }

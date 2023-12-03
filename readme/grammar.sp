@@ -141,6 +141,10 @@ if <if_1 == 20 or if_2 == 20>; // true (코드를 실행합니다);
     print('this is true'); // this is true 를 출력합니다;
 end();
 
+if <not if_1 == 20 or if_2 == 20>; // false (코드를 실행하지 않습니다);
+    print('this is false'); // 해당 메시지를 출력하지 않습니다;
+end();
+
 
 // --- 07. 모듈 불러오기 --- //;
 
@@ -149,3 +153,54 @@ import fs; // fs 모듈을 불러옵니다;
 import fs as test; // fs 모듈을 불러온뒤 test;
 import ./index; // index 파일을 불러옵니다 ;
 import ./index as test; // index 파일을 불러옵니다 test;
+
+
+// --- ??. 응용하기 --- //;
+
+
+// (웹서버 + rate-limit);
+import express;
+import request-ip as requestIp;
+const app?express = express();
+const port?number = 3000;
+app.use(requestIp.mw());
+cls <ips>;
+    public ip;
+    init <>;
+        this.ip = [];
+    end();
+    fun <cking:class:ip?string>;
+        let count?number = 0;
+        run <i:n?this.ip>;
+            if <i[0] == ip>;
+                if <Number(new Date()) - i[1] >= 2000>;
+                    this.ip.splice(n,n);
+                end();
+                else;
+                    count += 1;
+                end();
+            end();
+        end();
+        return count;
+    end();
+    fun <push:class:ip?string>;
+        this.ip.push([ip,Number(new Date())]);
+        return this.cking(ip);
+    end();
+end();
+const IP?any = new ips();
+fun <router::app?express>;
+    fun <app.get:listen['/']:req?express.req,res?express.res>;
+        print(`${new Date()} : ${req.clientIp}`);
+        if <IP.push(req.clientIp) >= 4>;
+            res.send({"send":"no"})
+        end();
+        else;
+            res.send({"send":"ok"})
+        end();
+    end[];
+end();
+fun <app.listen:listen[port,'0.0.0.0']:>;
+    print('Server on > '+port);
+    router(app);
+end[];
