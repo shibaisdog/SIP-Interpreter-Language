@@ -1,8 +1,6 @@
-필요한 모듈
-    npm install -g commander inquirer ts-node chalk yarn path fs
-
 CLI 적용법
-    npm i -g ./
+    SIP/stting/npm_setup.ps1 실행
+        만약 실행이 안될시 : 파워셀 관리자권한 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned > Y
 
 하이라이트 적용법
     SIP/tmp 안에 있는 sip.vscode 폴더를 문서 .vscode/extensions/ 안에다가 복사후 VSC 재부팅
@@ -10,19 +8,15 @@ CLI 적용법
 코드 문법
     ./grammar.sp
 
-코드 작업환경
-    //권장
-    SIP/workspace
-
 코드 실행법
     //컴파일러후 실행
     npx cli cf true -p 작업폴더(최상위) -f (실행할파일)
 
-    예시 SIP/workspace 일시
-    npx cli cf true -p 다운장소\\SIP\\workspace -f index.sp
+    예시: 다운로드/SIP/workspace 일시
+    npx cli cf true -p C:\Users\유저이름\Downloads\\SIP\\workspace -f index.sp
 
     //컴파일러만
     npx cli cf false -p 작업폴더(최상위) -f (실행할파일)
 
-    예시 SIP/workspace 일시
-    npx cli cf false -p 다운장소\\SIP\\workspace -f index.sp
+    예시: 다운로드/SIP/workspace 일시
+    npx cli cf false -p C:\Users\유저이름\Downloads\\SIP\\workspace -f index.sp
