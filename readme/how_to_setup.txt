@@ -3,7 +3,8 @@ CLI 적용법
         만약 실행이 안될시 : 파워셀 관리자권한 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned > Y
 
 하이라이트 적용법
-    SIP/tmp 안에 있는 sip.vscode 폴더를 문서 .vscode/extensions/ 안에다가 복사후 VSC 재부팅
+    SIP/stting/extension_setup_window.ps1 실행
+        만약 실행실패시 : SIP/tmp 안에 있는 sip.vscode 폴더를 문서 .vscode/extensions/ 안에다가 복사후 VSC 재부팅
 
 코드 문법
     ./grammar.sp
