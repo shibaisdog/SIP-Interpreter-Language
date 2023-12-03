@@ -68,7 +68,7 @@ cls <test>;
     end();
 end();
 const aa?any = new test();
-aa.read('test');
+aa.read('test'); // test 출력
 
 cls <Foo>;
     public name?string;
@@ -109,7 +109,7 @@ end();
 // --- 06. if 문 --- //;
 
 
-const ifs?number = 20
+const ifs?number = 20;
 if <ifs>=10>; // true (코드를 실행합니다);
     print('this is true'); // this is true 를 출력합니다;
 end();
@@ -131,7 +131,21 @@ else;
     print('this is true'); // this is true 를 출력합니다;
 end();
 
+const if_1?number = 10;
+const if_2?number = 20;
+if <if_1 == 10 and if_2 == 20>; // true (코드를 실행합니다);
+    print('this is true'); // this is true 를 출력합니다;
+end();
+
+if <if_1 == 20 or if_2 == 20>; // true (코드를 실행합니다);
+    print('this is true'); // this is true 를 출력합니다;
+end();
+
+
 // --- 07. 모듈 불러오기 --- //;
 
 
-import fs from "fs"; // fs 모듈을 불러옵니다;
+import fs; // fs 모듈을 불러옵니다;
+import fs as test; // fs 모듈을 불러온뒤 test;
+import ./index; // index 파일을 불러옵니다 ;
+import ./index as test; // index 파일을 불러옵니다 test;

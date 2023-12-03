@@ -11,6 +11,8 @@ module.exports = (line) => {
         license = _type_var.exports
         const _type_let = require('./interpreter/type/let.js')(license)
         license = _type_let.exports
+        const _import = require('./interpreter/function/import.js')(license) // IMPORT ~2
+        license = _import.exports
         const _lop = require('./interpreter/loop/lop.js')(license) // LOOP ~2
         license = _lop.exports
         const _run = require('./interpreter/loop/run.js')(license) // RUN ~2
@@ -23,14 +25,16 @@ module.exports = (line) => {
         license = _fun.exports
         const _if = require('./interpreter/if/if.js')(license) // IF ~2
         license = _if.exports
-        const _elif = require('./interpreter/if/elif.js')(license) // IF ~2
+        const _elif = require('./interpreter/if/elif.js')(license) // ELIF ~2
         license = _elif.exports
-        const _else = require('./interpreter/if/else.js')(license) // IF ~2
+        const _else = require('./interpreter/if/else.js')(license) // ELSE ~2
         license = _else.exports
         out += license
     }
     for (let i in after_replace) {out = out.replaceAll(after_replace[i].b,after_replace[i].a)}
     out = require('./interpreter/function/print.js')(out) // PRINT ~1
     out = require('./interpreter/type/read.js')(out) // TYPE? ~1
+    out = require('./interpreter/if/and.js')(out) // AND ~1
+    out = require('./interpreter/if/or.js')(out) // OR ~1
     return out
 }
