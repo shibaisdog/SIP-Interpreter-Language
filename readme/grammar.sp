@@ -1,7 +1,7 @@
 // --- 00. 주석 선언 --- //;
 
 
-// 주석;
+// 주석 (주석이던 코드이던 마지막줄에는 항상 세미클론이 와야한다);
 
 
 
@@ -69,6 +69,18 @@ cls <test>;
 end();
 const aa?any = new test();
 aa.read('test');
+
+cls <Foo>;
+    public name?string;
+    init <name?string>;
+        this.name = name;
+    end();
+    fun <read:class:>;
+        print(this.name)
+    end();
+end();
+const foo?any = new Foo('SIP');
+foo.read(); // SIP 출력
 
 
 // --- 05. 반복문 --- //;
