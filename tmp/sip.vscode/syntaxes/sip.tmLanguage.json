@@ -35,9 +35,9 @@
 		"reserved-words" : {
 			"patterns": [
 			    {"name": "entity.name.function.member.sip","match": "\\b(print|Number|toString)\\b"},
-				{"name": "keyword.control.sip","match": "\\b(if|else|elif|lop|break|run|fun|end|as|await|import|from|return)\\b"},
-				{"name": "keyword.other","match": "\\b(async|listen)\\b"},
-				{"name": "storage.modifier","match": "\\b(const|var|let|new)\\b"},
+				{"name": "keyword.control.sip","match": "\\b(if|else|elif|lop|break|run|fun|cls|init|end|as|await|import|from|return)\\b"},
+				{"name": "keyword.other","match": "\\b(async|listen|class)\\b"},
+				{"name": "storage.modifier","match": "\\b(const|var|let|new|this)\\b"},
 				{"name": "support.class","match": "\\b(Date|Array|JSON)\\b"},
 				{"name": "keyword.other","match": "\\b(true|false)\\b"}
 		    ]

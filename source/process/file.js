@@ -5,6 +5,6 @@ module.exports = (paths,file,value) => {
     try {fs.mkdirSync(dir)} catch (error) {}
     const refile = dir+file.replaceAll('.sp','.ts')
     fs.writeFileSync(refile,value,'utf-8') //write compiled file
-    fs.writeFileSync(path.join(paths,'tsconfig.json'),fs.readFileSync(path.join(__dirname,'../interpreter/publish/tsconfig.json')),'utf-8') //write tsconfig.json
+    fs.writeFileSync(path.join(paths,'tsconfig.json'),fs.readFileSync(path.join(__dirname,'../interpreter/__publish__/tsconfig.json')),'utf-8') //write tsconfig.json
     return refile
 }

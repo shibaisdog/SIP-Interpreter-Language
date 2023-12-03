@@ -59,7 +59,21 @@ fun <listen_add:listen[inputs]:output_1>; // 이벤트리스너에 inputs 를 �
     print(output_1);
 end[]; // 이때는 평소 함수와는 다르게 () 대신 [] 으로 선언;
 
+// 클래스 선언식;
+cls <test>;
+    init <>;
+    end();
+    fun <read:class:name>;
+        print(name);
+    end();
+end();
+const aa?any = new test();
+aa.read('test');
+
+
 // --- 05. 반복문 --- //;
+
+
 var array?string[] = ['a','b','c','d','e'];
 
 run <i?array>;
