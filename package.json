@@ -1,0 +1,19 @@
+{
+  "name": "sip",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "author": "ShibaDog",
+  "license": "ISC",
+  "bin": {
+    "cli": "./source/cmd/cli.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.2.12",
+    "path": "^0.12.7",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SIP",
+	"patterns": [
+		{"include": "#reserved-words"},
+		{"include": "#keywords"},
+		{"include": "#numbers"},
+		{"include": "#strings"},
+		{"include": "#type"}
+	],
+	"repository": {
+		"type": {
+			"patterns": [
+				{"name": "support.class","match": "\\b(-?(\\?).*boolean)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*number)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*string)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*Array)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*any)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*object)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*unknown)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*null)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*undefined)\\b"},
+				{"name": "support.class","match": "\\b(-?(\\?).*void)\\b"}
+		    ]
+		},
+		"numbers": {
+			"patterns": [{"name": "keyword.other.unit.sip","match": "\\b(-?[0-9][0-9\\.]+;?)\\b"}]
+		},
+		"keywords": {
+			"name": "string.quoted.double.sip",
+			"begin": "//",
+			"end": ";",
+			"patterns": [{"name": "comment.line","match": "\\\\."}]
+		},
+		"reserved-words" : {
+			"patterns": [
+			    {"name": "entity.name.function.member.sip","match": "\\b(print|Number|toString)\\b"},
+				{"name": "keyword.control.sip","match": "\\b(if|else|elif|lop|break|run|fun|end|as|await|import|from|return)\\b"},
+				{"name": "keyword.other","match": "\\b(async|listen)\\b"},
+				{"name": "storage.modifier","match": "\\b(const|var|let|new)\\b"},
+				{"name": "support.class","match": "\\b(Date|Array|JSON)\\b"},
+				{"name": "keyword.other","match": "\\b(true|false)\\b"}
+		    ]
+		},
+		"strings": {
+			"name": "string.quoted.double.sip",
+			"begin": "\"|'|`",
+			"end": "\"|'|`",
+			"patterns": [{"name": "constant.character.escape.sip","match": "\\\\."}]
+		}
+	},
+	"scopeName": "source.sip"
+}

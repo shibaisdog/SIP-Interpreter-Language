@@ -1,0 +1,25 @@
+{
+  "name": "sip",
+  "displayName": "SIP",
+  "description": "SIP",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sip",
+      "aliases": ["SIP", "sip"],
+      "extensions": [".sp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sip",
+      "scopeName": "source.sip",
+      "path": "./syntaxes/sip.tmLanguage.json"
+    }]
+  }
+}
