@@ -29,6 +29,10 @@ module.exports = (line) => {
         license = _elif.exports
         const _else = require('./interpreter/if/else.js')(license) // ELSE ~2
         license = _else.exports
+        const _throw = require('./interpreter/error/throw.js')(license) // THROW ~2
+        license = _throw.exports
+        const _catch = require('./interpreter/error/catch.js')(license) // CATCH ~2
+        license = _catch.exports
         out += license
     }
     for (let i in after_replace) {out = out.replaceAll(after_replace[i].b,after_replace[i].a)}
@@ -37,5 +41,7 @@ module.exports = (line) => {
     out = require('./interpreter/if/not.js')(out) // NOT ~1
     out = require('./interpreter/if/and.js')(out) // AND ~1
     out = require('./interpreter/if/or.js')(out) // OR ~1
+    out = require('./interpreter/error/try.js')(out) // TRY ~1
+    out = require('./interpreter/error/fialy.js')(out) // FIALY ~1
     return out
 }

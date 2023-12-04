@@ -68,7 +68,7 @@ cls <test>;
     end();
 end();
 const aa?any = new test();
-aa.read('test'); // test 출력
+aa.read('test'); // test 출력;
 
 cls <Foo>;
     public name?string;
@@ -80,7 +80,7 @@ cls <Foo>;
     end();
 end();
 const foo?any = new Foo('SIP');
-foo.read(); // SIP 출력
+foo.read(); // SIP 출력;
 
 
 // --- 05. 반복문 --- //;
@@ -146,7 +146,25 @@ if <not if_1 == 20 or if_2 == 20>; // false (코드를 실행하지 않습니다
 end();
 
 
-// --- 07. 모듈 불러오기 --- //;
+// --- 07. 에러 처리하기 --- //;
+
+
+throw Error("this is Error"); // this is Error 값을 가지는 예외가 발생합니다;
+throw TypeError("this is TypeError"); // this is Error 값을 가지는 타입에러가 발생합니다;
+
+try;
+    throw Error("this is Error"); // this is Error 값을 가지는 예외가 발생합니다;
+    print('1') // 해당 코드위에서 예외가 발생했으므로 코드가 실행되지 않습니다;
+end();
+catch <error>; // 예외가 발생한것을 가져옵니다 이때 catch <> 가 없을시 프로그램이 중지됩니다;
+    print(error); // 예외가 발생한 값을 가져옵니다 : this is Error;
+end();
+fialy; // 코드가 예외가 발생하던 발생안하던 코드를 실행합니다;
+    print('2'); // 2출력;
+end();
+
+
+// --- 08. 모듈 불러오기 --- //;
 
 
 import fs; // fs 모듈을 불러옵니다;
